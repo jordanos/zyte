@@ -15,6 +15,10 @@ from biz.items import BizItem
 class BizSpider(scrapy.Spider):
     name = "bsp"
     start_urls = [
+        # "https://www.google.com"is a placeholder because scrapy needs at least one url to start scraping
+        # it can be removed once curl_cffi is used internally instead of twisted framework
+        # curl_cffi is prefered because twisted can't impersonate browsers on tls fingerprint checking
+        # bizbuysell uses tls fingerprinting to detect bots
         "https://www.google.com",
     ]
 
